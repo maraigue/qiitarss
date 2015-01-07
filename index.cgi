@@ -38,7 +38,8 @@ module_function
 <input type="submit" value="RSSを取得する">
 </p></form>
 <hr>
-<p>作者：H.Hiro (<a href="main@hhiro.net">e-mail</a>) (<a href="http://qiita.com/h_hiro_">Qiita</a>) (<a href="https://twitter.com/h_hiro_/with_replies">Twitter</a>)</p>
+<p>ソースコードはこちら：<a href="https://github.com/maraigue/qiitarss">maraigue/qiitarss (GitHub)</a></p>
+<address>作者：H.Hiro (<a href="main@hhiro.net">e-mail</a>) (<a href="http://qiita.com/h_hiro_">Qiita</a>) (<a href="https://twitter.com/h_hiro_/with_replies">Twitter</a>)</address>
 </body>
 </html>
 HTML
