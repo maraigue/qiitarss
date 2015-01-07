@@ -37,6 +37,8 @@ module_function
 ユーザ名：<input type="text" name="user">
 <input type="submit" value="RSSを取得する">
 </p></form>
+<hr>
+<p>作者：H.Hiro (<a href="main@hhiro.net">e-mail</a>) (<a href="http://qiita.com/h_hiro_">Qiita</a>) (<a href="https://twitter.com/h_hiro_/with_replies">Twitter</a>)</p>
 </body>
 </html>
 HTML
