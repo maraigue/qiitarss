@@ -34,7 +34,7 @@ module_function
 <body>
 <h1>Qiitaの指定ユーザのストック一覧RSS（非公式）</h1>
 <form method="GET" action="./" target="_blank"><p>
-ユーザ名：<input type="text" name="user">
+ユーザ名：<input type="text" name="user" value="h_hiro_" onclick="javascript:this.select()">
 <input type="submit" value="RSSを取得する">
 </p></form>
 <hr>
