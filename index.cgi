@@ -21,7 +21,7 @@ module_function
       raise "無効なユーザ名です。"
     end
     
-    `curl 'http://qiita.com/api/v2/users/#{user}/items'`.force_encoding("utf-8")
+    `curl 'https://qiita.com/api/v2/users/#{user}/items'`.force_encoding("utf-8")
   end
   
   def view_top
@@ -60,6 +60,10 @@ XML
       view_error("フィードを取得できませんでした。(#{h e.class.to_s})")
       return
     end
+    if !buf || buf.empty?
+      view_error("フィードを取得できませんでした。curlが利用できないか、URLが不正です。")
+      return
+    end
     
     data = nil
     begin
@@ -68,8 +72,10 @@ XML
       view_error("フィードのフォーマットが異常です。(#{h e.class.to_s})")
       return
     end
-    
-    result = <<HEADER
+
+    result = ""
+    begin
+      result << <<HEADER
 <?xml version="1.0"?>
 <rss version="2.0">
   <channel>
@@ -78,7 +84,6 @@ XML
     <description>#{h data[0]["user"]["id"]}のQiitaへの投稿です。</description>
     <language>ja-jp</language>
 HEADER
-    begin
       data.each do |d|
         result << <<ITEM
     <item>
